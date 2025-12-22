@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Logged Applications</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 340px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+
+    .job-text {
+      flex: 1;
+      margin-right: 6px;
+    }
+
+    button.delete {
+      background: #e53935;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    button#export {
+      margin-top: 10px;
+      width: 100%;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Logged Applications</h3>
+  <ul id="list"></ul>
+
+  <button id="export">Export CSV</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

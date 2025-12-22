@@ -1,0 +1,16 @@
+#job-log-btn {
+    margin-left: 12px;
+    padding: 6px 12px;
+    background-color: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  #job-log-btn:disabled {
+    background-color: #4caf50;
+    cursor: default;
+  }
+  
