@@ -41,18 +41,28 @@
       font-size: 12px;
     }
 
-    button#export {
+    .actions {
+      display: flex;
+      gap: 6px;
       margin-top: 10px;
-      width: 100%;
+    }
+
+    .actions button {
+      flex: 1;
       padding: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h3>Logged Applications</h3>
+
   <ul id="list"></ul>
 
-  <button id="export">Export CSV</button>
+  <div class="actions">
+    <button id="export">Export CSV</button>
+    <button id="clear">Clear All</button>
+  </div>
 
   <script src="popup.js"></script>
 </body>

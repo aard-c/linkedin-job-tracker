@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === "SAVE_JOB") {
     chrome.storage.local.get(["applications"], (res) => {
       const applications = res.applications || [];
@@ -16,15 +16,13 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.type === "DELETE_JOB") {
     chrome.storage.local.get(["applications"], (res) => {
       const applications = res.applications || [];
-
       applications.splice(msg.index, 1);
-
-      chrome.storage.local.set({ applications }, () => {
-        sendResponse();
-      });
+      chrome.storage.local.set({ applications });
     });
+  }
 
-    return true; 
+  if (msg.type === "CLEAR_ALL") {
+    chrome.storage.local.set({ applications: [] });
   }
 
   if (msg.type === "EXPORT_CSV") {
